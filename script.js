@@ -27,7 +27,7 @@ NoButton.addEventListener("click", function () {
 });
 
 function handleSiClick() {
-  titleElement.innerHTML = "Por favor!! :3";
+  titleElement.innerHTML = "Se sonraja y muere de felicidad!! :3";
   buttonsContainer.classList.add("hidden");
   changeImage("Si");
 }
