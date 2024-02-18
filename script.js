@@ -2,7 +2,7 @@
 
 const titleElement = document.querySelector(".title");
 const buttonsContainer = document.querySelector(".buttons");
-const yesButton = document.querySelector(".btn--yes");
+const siButton = document.querySelector(".btn--si");
 const noButton = document.querySelector(".btn--no");
 const catImg = document.querySelector(".cat-img");
 
@@ -11,14 +11,14 @@ const MAX_IMAGES = 5;
 let play = true;
 let noCount = 0;
 
-yesButton.addEventListener("click", handleYesClick);
+yesButton.addEventListener("click", handleSiClick);
 
 noButton.addEventListener("click", function () {
   if (play) {
     noCount++;
     const imageIndex = Math.min(noCount, MAX_IMAGES);
     changeImage(imageIndex);
-    resizeYesButton();
+    resizSiButton();
     updateNoButtonText();
     if (noCount === MAX_IMAGES) {
       play = false;
@@ -27,27 +27,27 @@ noButton.addEventListener("click", function () {
 });
 
 function handleYesClick() {
-  titleElement.innerHTML = "Yayyy!! :3";
+  titleElement.innerHTML = "Por favor!! :3";
   buttonsContainer.classList.add("hidden");
-  changeImage("yes");
+  changeImage("Si");
 }
 
 function resizeYesButton() {
-  const computedStyle = window.getComputedStyle(yesButton);
+  const computedStyle = window.getComputedStyle(siButton);
   const fontSize = parseFloat(computedStyle.getPropertyValue("font-size"));
   const newFontSize = fontSize * 1.6;
 
-  yesButton.style.fontSize = `${newFontSize}px`;
+  siButton.style.fontSize = `${newFontSize}px`;
 }
 
 function generateMessage(noCount) {
   const messages = [
     "No",
-    "Are you sure?",
-    "Pookie please",
-    "Don't do this to me :(",
-    "You're breaking my heart",
-    "I'm gonna cry...",
+    "Estas segura?",
+    "Por favor isa",
+    "Aver si funciona esta programacion :(",
+    "Va ser divertido un lugar elegante",
+    " te puse michis y vamos de compras...",
   ];
 
   const messageIndex = Math.min(noCount, messages.length - 1);
