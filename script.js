@@ -11,9 +11,9 @@ const MAX_IMAGES = 5;
 let play = true;
 let noCount = 0;
 
-yesButton.addEventListener("click", handleSiClick);
+SiButton.addEventListener("click", handleSiClick);
 
-noButton.addEventListener("click", function () {
+NoButton.addEventListener("click", function () {
   if (play) {
     noCount++;
     const imageIndex = Math.min(noCount, MAX_IMAGES);
@@ -59,5 +59,5 @@ function changeImage(image) {
 }
 
 function updateNoButtonText() {
-  noButton.innerHTML = generateMessage(noCount);
+  NoButton.innerHTML = generateMessage(NoCount);
 }
