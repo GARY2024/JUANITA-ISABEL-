@@ -2,8 +2,8 @@
 
 const titleElement = document.querySelector(".title");
 const buttonsContainer = document.querySelector(".buttons");
-const siButton = document.querySelector(".btn--si");
-const noButton = document.querySelector(".btn--no");
+const siButton = document.querySelector(".btn--Si");
+const noButton = document.querySelector(".btn--No");
 const catImg = document.querySelector(".cat-img");
 
 const MAX_IMAGES = 5;
@@ -18,7 +18,7 @@ noButton.addEventListener("click", function () {
     noCount++;
     const imageIndex = Math.min(noCount, MAX_IMAGES);
     changeImage(imageIndex);
-    resizSiButton();
+    resizeSiButton();
     updateNoButtonText();
     if (noCount === MAX_IMAGES) {
       play = false;
@@ -33,11 +33,11 @@ function handleYesClick() {
 }
 
 function resizeYesButton() {
-  const computedStyle = window.getComputedStyle(siButton);
+  const computedStyle = window.getComputedStyle(SiButton);
   const fontSize = parseFloat(computedStyle.getPropertyValue("font-size"));
   const newFontSize = fontSize * 1.6;
 
-  siButton.style.fontSize = `${newFontSize}px`;
+  SiButton.style.fontSize = `${newFontSize}px`;
 }
 
 function generateMessage(noCount) {
